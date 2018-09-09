@@ -1,0 +1,20 @@
+<div class='wrapper'>
+	<a [routerLink]="['/']">Home</a> 
+	<form (submit)="edit(cur._id)">
+		
+		Name: <input  type="text" name="name" [(ngModel)]="update.name" value="{{cur.name}}">
+		<button [routerLink]="['/']">Cancel</button>
+		<input type="submit" name="submit">
+		
+	</form>
+	<ul *ngIf="errs"> 
+      <li *ngFor="let e of errs"> 
+        {{ e }} 
+        
+      </li>
+    </ul>
+</div>
+<!-- <div #other_content>
+	<h3>We are sorry, but we could not find the author you are looking for...</h3>
+	<a href="/">Back to Author List</a>
+</div> -->

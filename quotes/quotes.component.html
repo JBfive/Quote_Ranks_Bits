@@ -1,0 +1,19 @@
+<a [routerLink]="['/addquotes', cur._id]">Add a New Quote</a>
+<div class="quotes">
+	<h3>{{cur.name}}</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>Quotes</th>
+				<th>Votes</th>
+				<th>Actions Available</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor='let q of cur.quotes'>
+				<td >{{q.quote}}</td>
+				<td>{{q.votes}}</td>
+				<td><button >Vote UP</button> <button >Vote DOWN</button> <!-- <button (click)="delete(cur._id)">Delete</button> --></td>
+			</tr>
+		</tbody>
+	</table>

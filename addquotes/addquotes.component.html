@@ -1,0 +1,18 @@
+<div class='wrapper'>
+	<a [routerLink]="['/']">Home</a>
+	<a [routerLink]="['/quotes', cur._id]">Quotes</a>
+	<h3>{{cur.name}}</h3>
+	<form (submit)="onSubmit(cur._id)">
+		
+		Quote: <input type="text" name="quote" [(ngModel)]="quotes.quote">
+		<button [routerLink]="['/']">Cancel</button>
+		<input type="submit" name="submit">
+		
+	</form>
+	<ul *ngIf="errs"> 
+      <li *ngFor="let e of errs"> 
+        {{ e }} 
+        
+      </li>
+    </ul>
+</div>

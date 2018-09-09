@@ -1,0 +1,16 @@
+<div class='wrapper'>
+	<a [routerLink]="['/']">Home</a>
+	<form (submit)="onSubmit()">
+		
+		Name: <input type="text" name="name" [(ngModel)]="author.name">
+		<button [routerLink]="['/']">Cancel</button>
+		<input type="submit" name="submit">
+		
+	</form>
+	<ul *ngIf="errs"> 
+      <li *ngFor="let e of errs"> 
+        {{ e }} 
+        
+      </li>
+    </ul>
+</div>
